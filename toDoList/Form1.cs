@@ -20,10 +20,12 @@ namespace toDoList
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string filePath = "todo_list.txt";
+            string filePath = "tasks.txt";
             //파일이 존재하는지 확인
             if(File.Exists(filePath))
             {
+                //중복방지
+                lstTasks.Items.Clear();
                 string[] savedItems = File.ReadAllLines(filePath);
                 lstTasks.Items.AddRange(savedItems);
             }
