@@ -34,6 +34,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.lstTasks = new System.Windows.Forms.ListBox();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -61,6 +62,7 @@
             this.txtInput.Name = "txtInput";
             this.txtInput.Size = new System.Drawing.Size(144, 21);
             this.txtInput.TabIndex = 2;
+            this.txtInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtInput_KeyDown);
             // 
             // btnAdd
             // 
@@ -91,12 +93,23 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(25, 299);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "저장";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSalmon;
             this.ClientSize = new System.Drawing.Size(338, 432);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lstTasks);
             this.Controls.Add(this.btnAdd);
@@ -119,6 +132,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ListBox lstTasks;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnSave;
     }
 }
 
