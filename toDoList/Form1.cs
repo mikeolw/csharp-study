@@ -59,8 +59,12 @@ namespace toDoList
                 MessageBox.Show("할 일을 입력해주세요.", "알림");
                 return;
             }
-            //ListBox에 가져온 텍스트 추가
-            lstTasks.Items.Add(task);
+            //현재 날짜와 시간을 "yyyy-MM-dd HH:mm" 형식으로 문자열로 변환
+            string date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+            //할 일 내용 뒤에 날짜를 붙여 저장
+            string taskWithDate = $"{task}({date})";
+            //ListBox에 가져온 텍스트 추가, 날짜도 함께 추가
+            lstTasks.Items.Add(taskWithDate);
             //TextBox 비우기
             txtInput.Clear();
         }
